@@ -201,6 +201,7 @@ console.log(filterCardsPower(3,cards))
 
 function structuryHmlUl(ValPowerIdHtml,CardsArrayList){
   const list=document.getElementById(ValPowerIdHtml);
+  list.innerHTML='';
 
   CardsArrayList.forEach((element)=>{
     list.innerHTML+=` <li> ${ element.cardName} </li>`
@@ -220,5 +221,17 @@ function select(ValPowerIdHtml,CardsArrayList){
   })
 }
 select('select',powerValue)
+
+//funzione jqeri per la selezione
+
+$('#select').change(function(){
+  const selectValue=parseInt($(this).val());
+  const filtred=filterCardsPower(selectValue, cards)
+
+  structuryHmlUl('cadrsListMagic',filtred)
+})
+
+
+
 
 })//fine jqeri
