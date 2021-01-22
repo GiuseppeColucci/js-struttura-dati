@@ -14,6 +14,8 @@ const cardTypes = [
   'stregonerie'
 ]
 
+const powerValue=[1,2,3,4,5,];
+
 // Abbiamo creato un oggetto di oggetti, come riferimento
 // di una edizione. Se ad esempio scrivo editions['SP']
 // allora otterrò tutto un oggetto che descrive
@@ -208,6 +210,15 @@ function structuryHmlUl(ValPowerIdHtml,CardsArrayList){
 
 structuryHmlUl('cadrsListMagic',cards)
 
+//funzione per popolare il select
 
+function select(ValPowerIdHtml,CardsArrayList){
+  const select=document.getElementById(ValPowerIdHtml);
+
+  CardsArrayList.forEach((element)=>{
+    select.innerHTML+=` <option value= ${ element}>${element} </option>`
+  })
+}
+select('select',powerValue)
 
 })//fine jqeri
